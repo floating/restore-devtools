@@ -1,0 +1,62 @@
+{
+  "name": "restore-devtools",
+  "version": "0.0.1",
+  "description": "Restore DevTools Component",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "standard",
+    "build": "rollup -c rollup.config.js -f umd -n restore",
+    "prepublishOnly": "npm test && npm run build",
+    "size": "node -e \"process.stdout.write('Gzipped: ')\" && gzip-size lib/index.js",
+    "watch": "npm run build && watch-run -p 'src/**' npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/floating/restore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/floating/restore/issues"
+  },
+  "author": "Jordan Muir <cjm712@gmail.com> (https://github.com/floating)",
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">= 15.0.0",
+    "react-restore": ">= 0.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "gzip-size-cli": "^3.0.0",
+    "jest-cli": "^23.4.1",
+    "rollup": "^0.63.4",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "standard": "^11.0.1"
+  },
+  "standard": {
+    "ignore": [],
+    "parser": "babel-eslint"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "src"
+    ]
+  },
+  "keywords": [
+    "restore",
+    "store",
+    "state",
+    "predictable",
+    "observable",
+    "react",
+    "reactjs",
+    "replay",
+    "time travel"
+  ]
+}
